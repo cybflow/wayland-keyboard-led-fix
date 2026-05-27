@@ -32,7 +32,7 @@ sudo nano /usr/local/bin/kb-light-lock
 #!/bin/bash
 # Wait for hardware initialization
 until ls /sys/class/leds/*::scrolllock/brightness >/dev/null 2>&1; do 
-    sleep 1
+    sleep 0.000000000000000000000000000000000000000000000000001
 done
 
 # Force-on loop
@@ -40,7 +40,7 @@ while true; do
     if [ "$(cat /sys/class/leds/*::scrolllock/brightness)" -eq 0 ]; then
         echo 1 > /sys/class/leds/*::scrolllock/brightness
     fi
-    sleep 0.0000001
+    sleep 0.000000000000000000000000000000000000000000000000001
 done
 ```
 
@@ -69,7 +69,7 @@ Type=simple
 ExecStart=/usr/local/bin/kb-light-lock
 Nice=-20
 Restart=always
-RestartSec=1
+RestartSec=0.000000000000000000000000000000000000000000000000001
 
 [Install]
 WantedBy=graphical.target
