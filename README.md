@@ -1,6 +1,6 @@
 
 
-```markdown
+
 # Fedora Keyboard Backlight Fix (Wayland/GNOME 49)
 
 ![Fedora](https://img.shields.io/badge/Fedora-43-blue?logo=fedora) ![GNOME](https://img.shields.io/badge/GNOME-49-green?logo=gnome) ![Wayland](https://img.shields.io/badge/Display-Wayland-orange)
@@ -22,7 +22,7 @@ This project uses a high-priority background service to monitor the `/sys/class/
 
 ### Step 1: Create the Monitoring Script
 This script uses a loop to check the LED brightness every 0.000001 seconds.
-```
+
 ```bash
 sudo nano /usr/local/bin/kb-light-lock
 ```
@@ -87,7 +87,7 @@ sudo systemctl enable --now kb-light.service
 - **Low Latency:** `Nice=-20` ensures the "off" flicker is nearly invisible.
 - **Boot Persistent:** Starts automatically at the login screen.
 - **Resource Optimized:** Uses minimal CPU by only writing to hardware on state change.
-```
+
 
 ---
 
